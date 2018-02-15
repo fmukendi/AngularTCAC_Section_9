@@ -1,3 +1,4 @@
+import { PostsComponent } from './posts/posts.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -9,6 +10,10 @@ const routes: Routes = [
     {
         path: 'products',
         component: ProductListComponent
+    },
+    {
+        path: 'posts',
+        component: PostsComponent
     },
 
     // otherwise redirect to home

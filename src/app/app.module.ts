@@ -1,9 +1,10 @@
+import { PostService } from './services/post.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-
+import { HttpModule } from '@angular/http';
 import { MomentModule } from 'angular2-moment/moment.module';
 import {CalendarComponent} from 'ap-angular2-fullcalendar/src/calendar/calendar';
 import { FullCalendarModule } from 'ng-fullcalendar';
@@ -18,6 +19,7 @@ import { MatCardModule } from '@angular/material/card';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule, routedComponents } from './app-routing.module';
+import { PostsComponent } from './posts/posts.component';
 
 @NgModule({
     imports: [
@@ -36,13 +38,16 @@ import { AppRoutingModule, routedComponents } from './app-routing.module';
         MatInputModule,
         MatCardModule,
         MomentModule ,
-        HttpClientModule
+        HttpClientModule,
+        HttpModule
     ],
     declarations: [
         AppComponent,
-        routedComponents
+        routedComponents,
+        PostsComponent
     ],
     providers: [
+        PostService
     ],
     bootstrap: [AppComponent]
 })
