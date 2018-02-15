@@ -29,13 +29,13 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 …or create a new repository on the command line
 
-echo "# AngularTemplateRouting" >> README.md
+echo "# AngularTCAC_Section_9" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
-git remote add origin https://github.com/fmukendi/AngularTemplateRouting.git
+git remote add origin https://github.com/fmukendi/AngularTCAC_Section_9.git
 git push -u origin master
 …or push an existing repository from the command line
 
-git remote add origin https://github.com/fmukendi/AngularTemplateRouting.git
+git remote add origin https://github.com/fmukendi/AngularTCAC_Section_9.git
 git push -u origin master
