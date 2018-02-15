@@ -10,28 +10,32 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/do';
 
-// https://sergeome.com/blog/2017/11/26/simply-about-new-httpclient-in-angular/
 @Injectable()
-export class PostService {
-  private url = 'http://jsonplaceholder.typicode.com/posts';
-  constructor(private http: HttpClient) { }
+export class DataService {
 
-  getPosts() {
-    return this.http.get(this.url)
-    .catch(this.handleError);
+  constructor(private http: HttpClient, private url: string) { }
+  getAll() {
+    return this.http
+               .get(this.url)
+               .map (response => {
+                  // use map to return what u want from the Observable
+                  // return response.json()
+               })
+               .catch(this.handleError);
   }
 
-  createPost(post) {
-     return this.http.post(this.url, JSON.stringify(post))
+  create(resource) {
+     return this.http.post(this.url, JSON.stringify(resource))
+     // .map( response => reponse.json())
      .catch(this.handleError);
   }
 
-  updatePost(id, data: any) {
-    return this.http.patch(this.url + '/' + id , data )
+  update(resource) {
+    return this.http.patch(this.url + '/' + resource.id , resource )
     .catch(this.handleError);
   }
 
-  deletePost(id) {
+  delete(id) {
     return this.http.delete(this.url + '/' + id)
                .catch(this.handleError);
   }
